@@ -24,7 +24,6 @@ class ToDoList extends Component {
         } else {
             id = todolist[0].id + 1;
         }
-
         return id;
     }
 
@@ -40,7 +39,7 @@ class ToDoList extends Component {
         var { ids, inputValue } = this.state;
         return (
             <div className="ToDoList">
-                <input type="text" placeholder="input something" value={inputValue} onChange={(e) => { this.setState({ inputValue: e.currentTarget.value }) }} />
+                <input className="input" type="text" placeholder="input something" value={inputValue} onChange={(e) => { this.setState({ inputValue: e.currentTarget.value }) }} />
                 <button onClick={() => { actions.addOneToDO({ id: this.getNextId(), content: inputValue }); this.setState({ inputValue: '' }) }}>Add</button>
                 <button onClick={() => { actions.removeOneToDO(ids); this.setState({ ids: [] }) }}>Remove</button>
                 {todolist.todolist.map((v, idx) => <ToDOItem key={idx} {...v} getId={this.delete} />)}

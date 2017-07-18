@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import ToDoList from './components/ToDoList';
 import { Provider } from 'react-redux';
 import store from './store/dev-store';
+import App from './App';
 
 
 ReactDOM.render(
     <Provider store={store}>
-        <ToDoList />
+        <App />
     </Provider>, document.getElementById('root'));
